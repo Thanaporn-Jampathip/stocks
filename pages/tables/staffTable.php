@@ -20,7 +20,8 @@ $queryStaff = mysqli_query($conn, $sqlStaff);
                 <th>#</th>
                 <th>ชื่อผู้ใช้งาน</th>
                 <th>ชื่อ - นามสกุล</th>
-                <th>สร้างขขึ้นเมื่อ</th>
+                <th>สร้างขึ้นเมื่อ</th>
+                <th class="text-center">การจัดการ</th>
             </tr>
         </thead>
         <?php while ($rowStaff = mysqli_fetch_array($queryStaff)) { ?>
@@ -38,6 +39,19 @@ $queryStaff = mysqli_query($conn, $sqlStaff);
                     <td>
                         <?php echo $rowStaff['created_at'] ?>
                     </td>
+                    <td>
+                        <div class="manage">
+                            <div class="btn-edit">
+                                <a href="forms/staff_form/editStaffForm.php?id=<?php echo $rowStaff['id'] ?>"><i class="bi bi-pencil-square"></i></a>
+                            </div>
+                            <div class="btn-delete">
+                                <form action="" method="post">
+                                    <input type="hidden" name="staffID" value="<?php echo $rowStaff['id'] ?>">
+                                    <button type="submit" name="deleteStaff"><i class="bi bi-trash"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         <?php } ?>
@@ -45,3 +59,4 @@ $queryStaff = mysqli_query($conn, $sqlStaff);
 </body>
 
 </html>
+<?php include '../backend/action_manage_people.php' ?>

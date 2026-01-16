@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+body,
+html {
+  font-family: "Sarabun", sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+/* form add admin */
+.form-add-admin {
+  width: 500px;
+  border: 1px solid black;
+  padding: 2rem;
+  border-radius: 15px;
+  background: white;
+}
+.form-add-admin h5 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 550;
+}
+
+/* form */
+form {
+  width: 100%;
+}
+form label {
+  margin-bottom: 4px;
+}
+form input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 15px;
+  border: none;
+  background: rgb(244, 244, 244);
+}
+
+/* btn add admin */
+.btn-add-admin button {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid blue;
+  border-radius: 15px;
+  background: blue;
+  color: white;
+  transition: 0.3s ease;
+}
+.btn-add-admin button:hover {
+  background: rgb(0, 0, 207);
+  scale: calc(1.04);
+}
+
+/* btn back */
+.btn-back a {
+  display: block;
+  background: white;
+  text-align: center;
+  padding: 0.5rem;
+  border: 1px solid red;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: red;
+}
+.btn-back a:hover {
+  background: red;
+  color: white;
+  scale: calc(1.04);
+}

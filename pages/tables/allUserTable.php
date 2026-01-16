@@ -1,6 +1,6 @@
 <?php
 // fetch data admin
-$sqlAdmin = "SELECT user_id as id , username , full_name , created_at FROM users WHERE role = 'admin'";
+$sqlAdmin = "SELECT user_id as id , username , full_name , role , created_at FROM users";
 $queryAdmin = mysqli_query($conn, $sqlAdmin);
 ?>
 <!DOCTYPE html>
@@ -20,6 +20,7 @@ $queryAdmin = mysqli_query($conn, $sqlAdmin);
                 <th>#</th>
                 <th>ชื่อผู้ใช้งาน</th>
                 <th>ชื่อ - นามสกุล</th>
+                <th>บทบาท</th>
                 <th>สร้างขึ้นเมื่อ</th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@ $queryAdmin = mysqli_query($conn, $sqlAdmin);
                     <td><?php echo $rowAdmin['id'] ?></td>
                     <td><?php echo $rowAdmin['username'] ?></td>
                     <td><?php echo $rowAdmin['full_name'] ?></td>
+                    <td><?php echo $rowAdmin['role'] ?></td>
                     <td><?php echo $rowAdmin['created_at'] ?></td>
                 </tr>
             </tbody>

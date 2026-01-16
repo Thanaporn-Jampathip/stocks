@@ -2,11 +2,9 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
-
 table thead {
   background: linear-gradient(135deg, #003d82 0%, #001f4d 100%);
 }
-
 table th {
   padding: 1rem;
   text-align: left;
@@ -17,24 +15,58 @@ table th {
   letter-spacing: 0.5px;
   white-space: nowrap;
 }
-
 table tbody tr {
   border-bottom: 1px solid #f0f0f0;
   transition: all 0.3s ease;
 }
-
 table tbody tr:hover {
   background: linear-gradient(90deg, #f8f9ff 0%, white 100%);
   transform: scale(1.005);
 }
-
 table td {
   padding: 1rem;
   color: #333;
   font-size: 0.95rem;
 }
-
 table td:first-child {
   font-weight: 600;
   color: #003d82;
+}
+
+/* manage */
+.manage {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.manage a {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+/* btn edit */
+.btn-edit a {
+  padding: 0.3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: orange;
+  transition: 0.3s ease;
+}
+.btn-edit a:hover {
+  scale: calc(1.05);
+}
+
+/* btn delete */
+.btn-delete button {
+  background: red;
+  padding: 0.3rem 2rem;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+.btn-delete button:hover {
+  scale: calc(1.05);
 }

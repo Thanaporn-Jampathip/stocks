@@ -46,20 +46,24 @@ $rowUser = mysqli_fetch_array($queryUser);
                     <div class="content">
                         <div class="d-flex">
                             <div class="link">
+                                <a href="manage_user.php" class="btn_all">ทั้งหมด</a>
                                 <a href="?role=admin" class="btn_admin">แอดมิน</a>
                                 <a href="?role=staff" class="btn_staff">พนักงาน</a>
                             </div>
-                            <!-- check role for add people  -->
+
+                            <!-- check role for show btn add people  -->
                             <?php $role = $_GET['role'] ?? null;
                             // btn add admin
                             if ($role === 'admin') { ?>
                                 <div class="btn_add_admin">
-                                    <a href="./forms/adminForm.php"><i class="bi bi-person-plus"></i>เพิ่มแอดมิน</a>
+                                    <a href="./forms/admin_form/adminForm.php"><i
+                                            class="bi bi-person-plus"></i>เพิ่มแอดมิน</a>
                                 </div>
-                            <!-- btn add staff -->
+                                <!-- btn add staff -->
                             <?php } elseif ($role === 'staff') { ?>
                                 <div class="btn_add_staff">
-                                    <a href="./forms/staffForm.php"><i class="bi bi-person-plus"></i>เพิ่มพนักงาน</a>
+                                    <a href="./forms/staff_form/staffForm.php"><i
+                                            class="bi bi-person-plus"></i>เพิ่มพนักงาน</a>
                                 </div>
                             <?php } ?>
                         </div>
@@ -71,6 +75,8 @@ $rowUser = mysqli_fetch_array($queryUser);
                                 include './tables/adminTable.php';
                             } elseif ($role === 'staff') {
                                 include './tables/staffTable.php';
+                            }else{
+                                include './tables/allUserTable.php';
                             }
                             ?>
                         </div>
