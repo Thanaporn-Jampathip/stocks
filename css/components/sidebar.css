@@ -1,0 +1,80 @@
+body,
+html {
+  font-family: "Sarabun", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+/* header */
+header {
+  width: 300px;
+  height: 100vh;
+  background: linear-gradient(135deg, #062098 0%, #1b0134 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* website-name */
+.website-name {
+  padding: 1rem;
+  background: #000f47;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.website-name h4 {
+  color: white;
+  text-align: center;
+}
+
+/* menu */
+.menu {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.menu a {
+  font-size: 14pt;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: white;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  background: #000f47;
+  transition: 0.3s ease;
+}
+.menu a:hover {
+  background: white;
+  color: black;
+}
+.menu a i {
+  padding-right: 0.5rem;
+  font-size: 16pt;
+}
+
+/* logout */
+.logout {
+  background: red;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.logout a {
+  color: white;
+  text-decoration: none;
+  padding: 0.3rem;
+  display: block;
+}
+.logout:hover {
+  background: rgb(208, 0, 0);
+}

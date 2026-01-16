@@ -1,0 +1,21 @@
+body,
+html {
+  font-family: "Sarabun", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+}
