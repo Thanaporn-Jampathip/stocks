@@ -1,7 +1,7 @@
 <?php
 // fetch data admin
-$sqlAdmin = "SELECT user_id as id , username , full_name , role , created_at FROM users";
-$queryAdmin = mysqli_query($conn, $sqlAdmin);
+$sqlUsers = "SELECT user_id as id , username , full_name , role , created_at FROM users";
+$queryUsers = mysqli_query($conn, $sqlUsers);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,14 +24,20 @@ $queryAdmin = mysqli_query($conn, $sqlAdmin);
                 <th>สร้างขึ้นเมื่อ</th>
             </tr>
         </thead>
-        <?php while ($rowAdmin = mysqli_fetch_array($queryAdmin)) { ?>
+        <?php while ($rowUsers = mysqli_fetch_array($queryUsers)) { ?>
             <tbody>
                 <tr>
-                    <td><?php echo $rowAdmin['id'] ?></td>
-                    <td><?php echo $rowAdmin['username'] ?></td>
-                    <td><?php echo $rowAdmin['full_name'] ?></td>
-                    <td><?php echo $rowAdmin['role'] ?></td>
-                    <td><?php echo $rowAdmin['created_at'] ?></td>
+                    <td><?php echo $rowUsers['id'] ?></td>
+                    <td><?php echo $rowUsers['username'] ?></td>
+                    <td><?php echo $rowUsers['full_name'] ?></td>
+                    <td>
+                        <?php if ($rowUsers['role'] === 'admin') {
+                            echo "<span class='text-light bg-danger px-3 py-1 rounded-pill'>แอดมิน</span>";
+                        } else {
+                            echo "<span class='text-light bg-success px-3 py-1 rounded-pill'>แอดมิน</span>";
+                        } ?>
+                    </td>
+                    <td><?php echo $rowUsers['created_at'] ?></td>
                 </tr>
             </tbody>
         <?php } ?>
