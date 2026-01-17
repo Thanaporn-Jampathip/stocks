@@ -30,6 +30,7 @@ if (isset($_POST['addType'])) {
 if (isset($_POST['editType'])) {
     $typeName = $_POST['typeName'];
     $description = $_POST['description'];
+    $status = $_POST['status'];
     $typeID = $_POST['typeID'];
 
     // check type name is already exist
@@ -42,7 +43,7 @@ if (isset($_POST['editType'])) {
     }
 
     // edit type
-    $sqlEditType = "UPDATE categories SET category_name = '$typeName' , description = '$description' WHERE category_id = '$typeID'";
+    $sqlEditType = "UPDATE categories SET category_name = '$typeName' , description = '$description' , status = '$status' WHERE category_id = '$typeID'";
     $queryEditType = mysqli_query($conn, $sqlEditType);
 
     if ($queryEditType) {

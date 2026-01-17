@@ -61,7 +61,7 @@ $queryType = mysqli_query($conn, $sqlType);
                                         <th>#</th>
                                         <th>ชื่อหมวดหมู่</th>
                                         <th>คำอธิบาย</th>
-                                        <th>สถานะ</th>
+                                        <th class="text-center">สถานะ</th>
                                         <th>สร้างขึ้นเมื่อ</th>
                                         <th class="text-center">การจัดการ</th>
                                     </tr>
@@ -73,11 +73,11 @@ $queryType = mysqli_query($conn, $sqlType);
                                             <td><?php echo $rowType['category_id'] ?></td>
                                             <td><?php echo $rowType['category_name'] ?></td>
                                             <td><?php echo $rowType['description'] ?></td>
-                                            <td>
+                                            <td class="text-center">
                                                 <?php if($rowType['status'] === 'disabled'){
                                                     echo "<span class='text-light px-3 py-1 rounded-pill bg-danger'>ปิดการมองเห็น</span>";
                                                 }elseif($rowType['status'] === 'enabled'){
-                                                    echo "<span class='text-light px-3 py-1 rounded-pill bg-success'>เปิดการมองเห็นs</span>";
+                                                    echo "<span class='text-light px-3 py-1 rounded-pill bg-success'>เปิดการมองเห็น</span>";
                                                 } ?>
                                             </td>
                                             <td><?php echo $rowType['created_at'] ?></td>

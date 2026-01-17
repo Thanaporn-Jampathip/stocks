@@ -7,7 +7,7 @@ if(isset($_GET['id'])){
 }
 
 // fetch category
-$sqlType = "SELECT category_id as id ,category_name as type , description FROM categories WHERE category_id = '$typeID'";
+$sqlType = "SELECT status ,category_id as id ,category_name as type , description FROM categories WHERE category_id = '$typeID'";
 $queryType = mysqli_query($conn,$sqlType);
 $rowType = mysqli_fetch_array($queryType);
 ?>
@@ -36,9 +36,17 @@ $rowType = mysqli_fetch_array($queryType);
                         <input type="text" name="typeName" value="<?php echo $rowType['type'] ?>" required>
                     </div>
                     <!-- description -->
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label for="">รายละเอียด <span class="text-danger">*</span></label>
                         <textarea name="description" id="" rows="2" required><?php echo $rowType['description'] ?></textarea>
+                    </div>
+                    <!-- status -->
+                    <div class="mb-4">
+                        <label for="">สถานะ</label>
+                        <select name="status" id="">
+                            <option value="enabled" <?php echo ($rowType['status'] === 'enabled') ? 'selected' : '' ?>>เปิดการมองเห็น</option>
+                            <option value="disabled" <?php echo ($rowType['status'] === 'disabled') ? 'selected' : '' ?>>ปิดการมองเห็น</option>
+                        </select>
                     </div>
                     <!-- btn -->
                     <div class="btn-edit-type mb-2">
