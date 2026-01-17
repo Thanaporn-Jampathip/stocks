@@ -10,10 +10,19 @@ $sqlUser = "SELECT * FROM users WHERE user_id = '$userID'";
 $queryUser = mysqli_query($conn, $sqlUser);
 $rowUser = mysqli_fetch_array($queryUser);
 
-// fetch type 
-$sqlType = "SELECT * FROM categories";
-$queryType = mysqli_query($conn, $sqlType);
+// fetch category for filter data in table
+$sqlCategory = "SELECT * FROM categories";
+$queryCategory = mysqli_query($conn, $sqlCategory);
 
+// fetch product
+$sqlPro = "
+SELECT p.* , c.category_id as typeID ,c.category_name as type , b.name as brand
+FROM products p
+LEFT JOIN categories c ON p.category_id = c.category_id
+JOIN brands b ON p.brand_id = b.id
+ORDER BY p.product_id ASC
+";
+$queryPro = mysqli_query($conn, $sqlPro);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +34,9 @@ $queryType = mysqli_query($conn, $sqlType);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/manage_type.css">
+    <link rel="stylesheet" href="../css/manage_product.css">
 
-    <title>Manage type</title>
+    <title>Manage User</title>
 </head>
 
 <body class="min-vh-100">
@@ -41,61 +50,66 @@ $queryType = mysqli_query($conn, $sqlType);
             <?php include '../components/navbar.php' ?>
 
             <main>
-                <div class="container-manageType">
+                <div class="container-manageProduct">
                     <!-- header page -->
                     <div class="header-page">
-                        <h4><i class="bi bi-card-checklist"></i>หน้าจัดการหมวดหมู่สินค้า</h4>
+                        <h4><i class="bi bi-box-seam"></i>หน้าจัดการสินค้า</h4>
                     </div>
                     <!-- content -->
                     <div class="content">
-                        <!-- btn_add_type -->
-                        <div class="btn_add_type">
-                            <a href="./forms/category_form/add.php">เพิ่มหมวดหมู่</a>
+                        <div class="btn_add_pro">
+                            <a href="./forms/product_form/add.php">เพิ่มสินค้า</a>
                         </div>
-
-                        <!-- table-container -->
-                        <div class="table-container">
+                        <!-- table container -->
+                        <div class="table-container table-responsive">
                             <table>
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>ชื่อหมวดหมู่</th>
+                                        <th>รหัสสินค้า</th>
+                                        <th>ชื่อสินค้า</th>
+                                        <th>หมวดหมู่</th>
+                                        <th>แบรนด์</th>
+                                        <th>หน่วย</th>
+                                        <th>สต็อกขั้นต่ำ</th>
                                         <th>คำอธิบาย</th>
-                                        <th>สถานะ</th>
                                         <th>สร้างขึ้นเมื่อ</th>
                                         <th class="text-center">การจัดการ</th>
                                     </tr>
                                 </thead>
-
-                                <?php while ($rowType = mysqli_fetch_array($queryType)) { ?>
+                                <?php while ($rowPro = mysqli_fetch_array($queryPro)) { ?>
                                     <tbody>
                                         <tr>
-                                            <td><?php echo $rowType['category_id'] ?></td>
-                                            <td><?php echo $rowType['category_name'] ?></td>
-                                            <td><?php echo $rowType['description'] ?></td>
+                                            <td><?php echo $rowPro['product_id'] ?></td>
+                                            <td><?php echo $rowPro['product_code'] ?></td>
+                                            <td><?php echo $rowPro['product_name'] ?></td>
+                                            <td><?php echo $rowPro['type'] ?></td>
+                                            <td><?php echo $rowPro['brand'] ?></td>
+                                            <td><?php echo $rowPro['unit'] ?></td>
+                                            <td><?php echo $rowPro['min_stock'] ?></td>
                                             <td>
-                                                <?php if($rowType['status'] === 'disabled'){
-                                                    echo "<span class='text-light px-3 py-1 rounded-pill bg-danger'>ปิดการมองเห็น</span>";
-                                                }elseif($rowType['status'] === 'enabled'){
-                                                    echo "<span class='text-light px-3 py-1 rounded-pill bg-success'>เปิดการมองเห็นs</span>";
+                                                <?php if (empty($rowPro['description'])) {
+                                                    echo "ไม่มี";
+                                                } else {
+                                                    echo $rowPro['description'];
                                                 } ?>
                                             </td>
-                                            <td><?php echo $rowType['created_at'] ?></td>
+                                            <td><?php echo $rowPro['created_at'] ?></td>
                                             <td>
                                                 <div class="manage">
                                                     <div class="btn-edit">
                                                         <a
-                                                            href="forms/category_form/edit.php?id=<?php echo $rowType['category_id'] ?>"><i
+                                                            href="forms/product_form/edit.php?id=<?php echo $rowPro['product_id'] ?>"><i
                                                                 class="bi bi-pencil-square"></i></a>
                                                     </div>
-                                                    <!-- <div class="btn-delete">
+                                                    <div class="btn-delete">
                                                         <form action="" method="post">
-                                                            <input type="hidden" name="typeID"
-                                                                value="<?php echo $rowType['category_id'] ?>">
-                                                            <button type="submit" name="deleteType"><i
+                                                            <input type="hidden" name="proID"
+                                                                value="<?php echo $rowPro['product_id'] ?>">
+                                                            <button type="submit" name="deletePro"><i
                                                                     class="bi bi-trash"></i></button>
                                                         </form>
-                                                    </div> -->
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>
@@ -115,4 +129,5 @@ $queryType = mysqli_query($conn, $sqlType);
 </body>
 
 </html>
-<?php include '../backend/action_manage_category.php' ?>
+<!-- <script src="../js/filterProductByCategory.js"></script> -->
+<?php include '../backend/action_manage_product.php' ?>
