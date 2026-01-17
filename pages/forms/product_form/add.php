@@ -6,7 +6,7 @@ $sqlType = "SELECT category_id as id , category_name as name FROM categories WHE
 $queryType = mysqli_query($conn, $sqlType);
 
 // fetch all brand
-$sqlBrand = "SELECT * FROM brands";
+$sqlBrand = "SELECT * FROM brands WHERE status = 'enabled'";
 $queryBrand = mysqli_query($conn, $sqlBrand);
 ?>
 <!DOCTYPE html>
