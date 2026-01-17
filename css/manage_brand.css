@@ -16,7 +16,7 @@ h6 {
 }
 
 /* container-manageProduct */
-.container-manageType {
+.container-manageProduct {
   padding: 2rem;
 }
 
@@ -26,11 +26,11 @@ h6 {
   font-size: 16pt;
 }
 
-/* btn add type */
-.btn_add_type {
+/* btn add pro */
+.btn_add_pro {
   display: flex;
 }
-.btn_add_type a {
+.btn_add_pro a {
   display: block;
   background: green;
   width: fit-content;
@@ -40,10 +40,27 @@ h6 {
   color: white;
   transition: 0.3s ease;
 }
-.btn_add_type a:hover {
+.btn_add_pro a:hover {
   background: rgb(0, 99, 0);
   scale: calc(1.05);
   color: white;
+}
+
+/* filter */
+.filter {
+  margin-left: auto;
+}
+.filter select {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: rgb(236, 236, 236);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-align: center;
+}
+.filter select:hover {
+  background: rgb(213, 213, 213);
 }
 
 /* table container */
@@ -101,7 +118,6 @@ table td:first-child {
   gap: 0.5rem;
 }
 .manage a {
-  display: flex;
   text-decoration: none;
   color: white;
 }
@@ -113,6 +129,7 @@ table td:first-child {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   background: orange;
   transition: 0.3s ease;
+  width: 100%;
   text-align: center;
 }
 .btn-edit a:hover {
