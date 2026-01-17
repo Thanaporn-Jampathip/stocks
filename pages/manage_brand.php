@@ -90,7 +90,6 @@ $queryBrand = mysqli_query($conn, $sqlBrand);
                             </table>
                         </div>
                     </div>
-                    asdasdd
                 </div>
             </main>
 
