@@ -17,9 +17,7 @@ h6 {
 
 /* main */
 main {
-  flex: 1;
-  overflow-y: auto;
-  height: calc(100vh - 60px); /* ปรับตามความสูงของ navbar + footer */
+  height: 100%;
 }
 
 /* container-manageBrand */

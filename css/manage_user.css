@@ -16,7 +16,7 @@ h6 {
 }
 
 /* main */
-main{
+main {
   height: 100%;
 }
 
@@ -34,7 +34,7 @@ main{
   display: flex;
   align-items: center;
 }
-.header-page h4{
+.header-page h4 {
   font-size: 18pt;
 }
 .header-page i {
