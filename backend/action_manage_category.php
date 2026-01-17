@@ -54,21 +54,4 @@ if (isset($_POST['editType'])) {
         exit();
     }
 }
-
-// delete type
-// if (isset($_POST['deleteType'])) {
-//     $typeID = $_POST['typeID'];
-
-//     // delete type
-//     $sqlDeleteType = "DELETE FROM categories WHERE category_id = '$typeID'";
-//     $queryDeleteType = mysqli_query($conn, $sqlDeleteType);
-
-//     if ($queryDeleteType) {
-//         echo "<script>alert('ลบสำเร็จ'); window.location.href='manage_type.php'</script>";
-//         exit();
-//     } else {
-//         echo "<script>alert('เกิดข้อผิดพลาด'); window.location.href='manage_type.php'</script>";
-//         exit();
-//     }
-// }
 ?>
