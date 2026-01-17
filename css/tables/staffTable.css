@@ -4,6 +4,9 @@ table {
 }
 table thead {
   background: linear-gradient(135deg, #003d82 0%, #001f4d 100%);
+  position: sticky;
+  z-index: 2;
+  top: 0;
 }
 table th {
   padding: 1rem;
