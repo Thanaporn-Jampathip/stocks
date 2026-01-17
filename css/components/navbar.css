@@ -25,7 +25,7 @@ nav {
 .user {
   border: 2px solid blue;
   color: blue;
-  padding: 0.5rem 1rem 0.2rem 1rem;
+  padding: 0.3rem 1rem 0.5rem 1rem;
   border-radius: 10px;
   transition: 0.3s ease;
   cursor: pointer;
@@ -35,6 +35,14 @@ nav {
   background: blue;
   color: white;
 }
-.user h6 i {
+
+/* link */
+.link a {
+  text-decoration: none;
+}
+.link a:hover {
+  color: white;
+}
+.link a i {
   padding-right: 0.3rem;
 }
