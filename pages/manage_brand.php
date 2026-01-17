@@ -40,7 +40,7 @@ $queryBrand = mysqli_query($conn, $sqlBrand);
             <?php include '../components/navbar.php' ?>
 
             <main>
-                <div class="container-manageProduct">
+                <div class="container-manageBrand">
                     <!-- header page -->
                     <div class="header-page">
                         <h4><i class="bi bi-bag"></i>หน้าจัดการแบรนด์</h4>
@@ -90,6 +90,7 @@ $queryBrand = mysqli_query($conn, $sqlBrand);
                             </table>
                         </div>
                     </div>
+                    asdasdd
                 </div>
             </main>
 

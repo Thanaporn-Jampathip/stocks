@@ -1,6 +1,8 @@
 body,
 html {
   font-family: "Sarabun", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -15,65 +17,172 @@ h6 {
 
 /* header */
 header {
+  min-width: 280px;
   max-width: 280px;
-  width: 100%;
+  width: 280px;
   height: 100vh;
   background: linear-gradient(135deg, #13236a 0%, #000000 100%);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Scrollbar สำหรับ sidebar */
+header::-webkit-scrollbar {
+  width: 6px;
+}
+
+header::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+header::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+header::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Inner wrapper */
+header > div {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* website-name */
 .website-name {
-  padding: 1rem;
-  background: #000f47;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1rem;
+  background: linear-gradient(135deg, #000f47 0%, #001a66 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
 }
+
 .website-name h4 {
   color: white;
   text-align: center;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 /* menu */
 .menu {
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
 }
+
+.menu h6 {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 1rem 0 0.5rem 0.5rem;
+  font-weight: 600;
+}
+
 .menu a {
-  font-size: 14pt;
-  color: white;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
-.menu a:hover {
+
+.menu a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
   background: white;
-  color: black;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
 }
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: translateX(5px);
+  padding-left: 1.25rem;
+}
+
+.menu a:hover::before {
+  transform: scaleY(1);
+}
+
+.menu a.active {
+  background: white;
+  color: #13236a;
+  font-weight: 600;
+}
+
 .menu a i {
-  padding-right: 0.5rem;
-  font-size: 16pt;
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
 }
 
 /* logout */
 .logout {
-  background: red;
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
   width: 100%;
   text-align: center;
   border-radius: 10px;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+  margin-top: auto;
 }
+
 .logout a {
   color: white;
   text-decoration: none;
-  padding: 0.3rem;
+  padding: 0.75rem;
   display: block;
+  font-weight: 600;
+  font-size: 1rem;
 }
+
 .logout:hover {
-  background: rgb(208, 0, 0);
+  background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.6);
+}
+
+.logout:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    min-width: 250px;
+    max-width: 250px;
+    width: 250px;
+  }
+
+  .website-name h4 {
+    font-size: 1rem;
+  }
+
+  .menu a {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
 }

@@ -15,15 +15,33 @@ h6 {
   font-weight: 600;
 }
 
-/* container-manageProduct */
-.container-manageProduct {
-  padding: 2rem;
+/* main */
+main {
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh - 60px); /* ปรับตามความสูงของ navbar + footer */
+}
+
+/* container-manageBrand */
+.container-manageBrand {
+  padding: 1rem 2rem;
 }
 
 /* header page */
+.header-page {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+.header-page h4 {
+  font-size: 18pt;
+}
 .header-page i {
   margin-right: 0.3rem;
-  font-size: 16pt;
+  font-size: 20pt;
 }
 
 /* btn add pro */
@@ -46,23 +64,6 @@ h6 {
   color: white;
 }
 
-/* filter */
-.filter {
-  margin-left: auto;
-}
-.filter select {
-  padding: 0.5rem 1rem;
-  border: none;
-  background: rgb(236, 236, 236);
-  border-radius: 15px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  text-align: center;
-}
-.filter select:hover {
-  background: rgb(213, 213, 213);
-}
-
 /* table container */
 .table-container {
   background: rgb(245, 245, 245);
@@ -81,6 +82,9 @@ table {
   border-collapse: collapse;
 }
 table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background: linear-gradient(135deg, #003d82 0%, #001f4d 100%);
 }
 table th {
