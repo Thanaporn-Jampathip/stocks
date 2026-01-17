@@ -15,14 +15,9 @@ h6 {
   font-weight: 600;
 }
 
-/* main */
-main {
-  padding: 1rem;
-}
-
 /* container-manageUser */
 .container-manageUser {
-  padding: 1rem;
+  padding: 2rem;
 }
 
 /* header page */
@@ -34,10 +29,6 @@ main {
 .header-page i {
   margin-right: 0.3rem;
   font-size: 16pt;
-}
-
-/* content */
-.content {
 }
 
 /* link */
@@ -148,11 +139,6 @@ main {
   margin-top: 1.5rem;
   max-width: 100%;
   /* border: 1px solid black; */
-}
-
-/* form */
-.form {
-  width: 30%;
 }
 
 /* table container */
