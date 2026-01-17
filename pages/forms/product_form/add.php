@@ -2,7 +2,7 @@
 include '../../../backend/config.php';
 
 // fetch all type
-$sqlType = "SELECT category_id as id , category_name as name FROM categories";
+$sqlType = "SELECT category_id as id , category_name as name FROM categories WHERE status = 'enabled'";
 $queryType = mysqli_query($conn, $sqlType);
 
 // fetch all brand

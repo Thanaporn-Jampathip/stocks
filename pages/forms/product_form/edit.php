@@ -17,7 +17,7 @@ $queryPro = mysqli_query($conn,$sqlPro);
 $rowPro = mysqli_fetch_array($queryPro);
 
 // fetch type
-$sqlType = "SELECT category_id as id , category_name as name FROM categories";
+$sqlType = "SELECT category_id as id , category_name as name FROM categories WHERE status = 'enabled'";
 $queryType = mysqli_query($conn,$sqlType);
 
 // fetch brand
