@@ -99,31 +99,12 @@ header > div {
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  position: relative;
   overflow: hidden;
-}
-
-.menu a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 4px;
-  background: white;
-  transform: scaleY(0);
-  transition: transform 0.3s ease;
 }
 
 .menu a:hover {
   background: rgba(255, 255, 255, 0.15);
   color: white;
-  transform: translateX(5px);
-  padding-left: 1.25rem;
-}
-
-.menu a:hover::before {
-  transform: scaleY(1);
 }
 
 .menu a.active {

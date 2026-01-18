@@ -8,6 +8,9 @@
 <a href="manage_type.php"><i class="bi bi-card-checklist"></i>จัดการหมวดหมู่</a>
 <a href="manage_brand.php"><i class="bi bi-bag"></i>จัดการแบรนด์</a>
 
+<h6 class="text-secondary text-left">คลังสินค้า</h6>
+<a href="storage.php"><i class="bi bi-truck"></i>สต็อกคงเหลือ</a>
+
 <h6 class="text-secondary text-left">รายงานและอื่นๆ</h6>
-<a href="manage_supplier.php"><i class="bi bi-truck"></i>ซัพพลายเออร์</a>
+<a href="manage_supplier.php" class="mb-3"><i class="bi bi-truck"></i>ซัพพลายเออร์</a>
 
