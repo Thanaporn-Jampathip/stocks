@@ -21,8 +21,8 @@ nav {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* link */
-.link a {
+/* user */
+.user .link a {
   display: block;
   border: 1px solid black;
   text-decoration: none;
@@ -34,10 +34,10 @@ nav {
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-.link a:hover {
+.user .link a:hover {
   color: white;
   background: blue;
 }
-.link a i {
+.user .link a i {
   padding-right: 0.3rem;
 }
