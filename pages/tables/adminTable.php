@@ -1,6 +1,6 @@
 <?php
 // fetch data admin
-$sqlAdmin = "SELECT user_id as id , username , full_name , created_at FROM users WHERE role = 'admin'";
+$sqlAdmin = "SELECT user_id as id , username , full_name , created_at FROM users WHERE role = '1'";
 $queryAdmin = mysqli_query($conn, $sqlAdmin);
 ?>
 <!DOCTYPE html>

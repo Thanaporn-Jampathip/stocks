@@ -22,9 +22,9 @@
             </div>
             <!-- menu -->
             <div class="menu">
-                <?php if ($userRole === 'admin') {
+                <?php if ($userRole === '1') {
                     include '../menu/admin.php';
-                } elseif ($userRole === 'staff') {
+                } elseif ($userRole === '2') {
                     include '../menu/staff.php';
                 }
                 ?>

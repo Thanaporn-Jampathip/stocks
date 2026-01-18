@@ -1,6 +1,6 @@
 <?php
 // fetch data staff
-$sqlStaff = "SELECT user_id as id , username , full_name , created_at FROM users WHERE role = 'staff'";
+$sqlStaff = "SELECT user_id as id , username , full_name , created_at FROM users WHERE role = '2'";
 $queryStaff = mysqli_query($conn, $sqlStaff);
 ?>
 <!DOCTYPE html>

@@ -31,10 +31,10 @@ $queryUsers = mysqli_query($conn, $sqlUsers);
                     <td><?php echo $rowUsers['username'] ?></td>
                     <td><?php echo $rowUsers['full_name'] ?></td>
                     <td>
-                        <?php if ($rowUsers['role'] === 'admin') {
+                        <?php if ($rowUsers['role'] === '1') {
                             echo "<span class='text-light bg-danger px-3 py-1 rounded-pill'>แอดมิน</span>";
                         } else {
-                            echo "<span class='text-light bg-success px-3 py-1 rounded-pill'>แอดมิน</span>";
+                            echo "<span class='text-light bg-success px-3 py-1 rounded-pill'>พนักงาน</span>";
                         } ?>
                     </td>
                     <td><?php echo $rowUsers['created_at'] ?></td>

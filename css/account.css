@@ -43,7 +43,80 @@ main {
 }
 
 /* profile */
-.profile{
-    
+.profile {
+  font-size: 16pt;
+  width: 30%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 15px;
+  height: fit-content;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.profile p i {
+  font-size: 30pt;
+  margin-bottom: 1rem;
 }
 
+/* form container */
+.form-container {
+  width: 70%;
+}
+.form-container h5 i {
+  padding-right: 0.3rem;
+  font-size: 18pt;
+}
+
+/* form */
+form {
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+form label {
+  width: 100%;
+  margin-bottom: 0.3rem;
+}
+form input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 15px;
+  border: none;
+  background: rgb(244, 244, 244);
+}
+
+/* btn save data */
+.btn-save-data button {
+  padding: 0.3rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: blue;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-save-data button i {
+  padding-right: 0.3rem;
+}
+.btn-save-data button:hover {
+  background: rgb(0, 0, 207);
+  scale: calc(1.04);
+}
+
+/* btn save password */
+.btn-save-password button {
+  padding: 0.3rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: orange;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-save-password button:hover {
+  background: rgb(222, 145, 0);
+  scale: calc(1.04);
+}
+.btn-save-password button i {
+  padding-right: 0.3rem;
+}
