@@ -6,7 +6,6 @@ if (isset($_POST['addProduct'])) {
     $typeID = $_POST['type'];
     $brand = $_POST['brand'];
     $unit = $_POST['unit'];
-    $minStock = $_POST['min_stock'];
     $description = $_POST['description'] ?? null;
 
     // check code product already exist
@@ -28,7 +27,7 @@ if (isset($_POST['addProduct'])) {
     }
 
     // insert pro
-    $sqlInsertPro = "INSERT INTO products (product_code, product_name, category_id , brand_id , unit , min_stock, description, created_at) VALUES ('$proCode' , '$proName' , '$typeID' ,'$brand' , '$unit' , '$minStock','$description',NOW())";
+    $sqlInsertPro = "INSERT INTO products (product_code, product_name, category_id , brand_id , unit , description, created_at) VALUES ('$proCode' , '$proName' , '$typeID' ,'$brand' , '$unit' ,'$description',NOW())";
     $queryInsertPro = mysqli_query($conn, $sqlInsertPro);
 
     if ($queryInsertPro) {
@@ -45,7 +44,6 @@ if (isset($_POST['editProduct'])) {
     $typeID = $_POST['type'];
     $brandID = $_POST['brand'];
     $unit = $_POST['unit'];
-    $min_stock = $_POST['min_stock'];
     $description = $_POST['description'] ?? null;
 
     $proID = $_POST['proID'];
@@ -67,7 +65,7 @@ if (isset($_POST['editProduct'])) {
     }
 
     // edit product
-    $sqlEdit = "UPDATE products SET product_code = '$proCode', product_name = '$proName' , category_id = '$typeID' , brand_id = '$brandID' , unit = '$unit' , min_stock = '$min_stock' , description = '$description' WHERE product_id = '$proID'";
+    $sqlEdit = "UPDATE products SET product_code = '$proCode', product_name = '$proName' , category_id = '$typeID' , brand_id = '$brandID' , unit = '$unit' , description = '$description' WHERE product_id = '$proID'";
     $queryEdit = mysqli_query($conn, $sqlEdit);
 
     if ($queryEdit) {

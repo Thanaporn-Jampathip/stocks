@@ -82,7 +82,6 @@ $queryPro = mysqli_query($conn, $sqlPro);
                                         <th>หมวดหมู่</th>
                                         <th>แบรนด์</th>
                                         <th>หน่วย</th>
-                                        <th>สต็อกขั้นต่ำ</th>
                                         <th>คำอธิบาย</th>
                                         <th>สร้างขึ้นเมื่อ</th>
                                         <th class="text-center">การจัดการ</th>
@@ -97,7 +96,6 @@ $queryPro = mysqli_query($conn, $sqlPro);
                                             <td><?php echo $rowPro['type'] ?></td>
                                             <td><?php echo $rowPro['brand'] ?></td>
                                             <td><?php echo $rowPro['unit'] ?></td>
-                                            <td><?php echo $rowPro['min_stock'] ?></td>
                                             <td>
                                                 <?php if (empty($rowPro['description'])) {
                                                     echo "ไม่มี";

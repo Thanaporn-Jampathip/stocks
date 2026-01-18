@@ -78,6 +78,7 @@ header > div {
   flex-direction: column;
   flex: 1;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .menu h6 {

@@ -70,28 +70,18 @@ $queryBrand = mysqli_query($conn, $sqlBrand);
                             </div>
                         </div>
                     </div>
-                    <!-- unit and min stock -->
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3">
-                                <label for="">หน่วย <span class="text-danger">*</span></label>
-                                <select name="unit" id="" required>
-                                    <option value="" selected disabled>เลือกหน่วย</option>
-                                    <option value="ขวด">ขวด</option>
-                                    <option value="ตลับ">ตลับ</option>
-                                    <option value="ซอง">ซอง</option>
-                                    <option value="แท่ง">แท่ง</option>
-                                    <option value="กระปุก">กระปุก</option>
-                                    <option value="กล่อง">กล่อง</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mb-3">
-                                <label for="">สต็อกขั้นต่ำ <span class="text-danger">*</span></label>
-                                <input type="int" name="min_stock" placeholder="จำนวนเต็มเท่านั้น" required>
-                            </div>
-                        </div>
+                    <!-- unit -->
+                    <div class="mb-3">
+                        <label for="">หน่วย <span class="text-danger">*</span></label>
+                        <select name="unit" id="" required>
+                            <option value="" selected disabled>เลือกหน่วย</option>
+                            <option value="ขวด">ขวด</option>
+                            <option value="ตลับ">ตลับ</option>
+                            <option value="ซอง">ซอง</option>
+                            <option value="แท่ง">แท่ง</option>
+                            <option value="กระปุก">กระปุก</option>
+                            <option value="กล่อง">กล่อง</option>
+                        </select>
                     </div>
                     <!-- description -->
                     <div class="mb-4">
