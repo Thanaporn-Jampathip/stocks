@@ -44,7 +44,9 @@ $querySupplier = mysqli_query($conn, $sqlSupplier);
                 <div class="container-manageSupplier">
                     <!-- header page -->
                     <div class="header-page">
-                        <h4><i class="bi bi-card-checklist"></i>หน้าจัดการซัพพลายเออร์</h4>
+                        <h4><i class="bi bi-card-checklist"></i>หน้าจัดการซัพพลายเออร์ <br>
+                            <span style="font-size: 13pt; color: gray;">ข้อมูลผู้จัดจำหน่ายและติดต่อสินค้า</span>
+                        </h4>
                     </div>
                     <!-- content -->
                     <div class="content">
@@ -64,7 +66,6 @@ $querySupplier = mysqli_query($conn, $sqlSupplier);
                                         <th>เบอร์โทรศัพท์</th>
                                         <th>อีเมล</th>
                                         <th>ที่อยู่</th>
-                                        <th>สร้างขึ้นเมื่อ</th>
                                         <th class="text-center">การจัดการ</th>
                                     </tr>
                                 </thead>
@@ -84,7 +85,6 @@ $querySupplier = mysqli_query($conn, $sqlSupplier);
                                                     echo $rowSupplier['address'];
                                                 } ?>
                                             </td>
-                                            <td><?php echo $rowSupplier['created_at'] ?></td>
                                             <td>
                                                 <div class="manage">
                                                     <div class="btn-edit">
