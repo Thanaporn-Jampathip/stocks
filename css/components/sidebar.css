@@ -96,7 +96,7 @@ header > div {
   border-radius: 10px;
   padding: 0.75rem 1rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
   display: flex;
   align-items: center;
   overflow: hidden;

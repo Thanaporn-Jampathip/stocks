@@ -24,7 +24,6 @@ table tbody tr {
 }
 table tbody tr:hover {
   background: linear-gradient(90deg, #f8f9ff 0%, white 100%);
-  transform: scale(1.005);
 }
 table td {
   padding: 1rem;
