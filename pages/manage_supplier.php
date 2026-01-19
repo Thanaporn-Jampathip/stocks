@@ -64,7 +64,6 @@ $querySupplier = mysqli_query($conn, $sqlSupplier);
                                         <th>เบอร์โทรศัพท์</th>
                                         <th>อีเมล</th>
                                         <th>ที่อยู่</th>
-                                        <th>รับสินต้า</th>
                                         <th>สร้างขึ้นเมื่อ</th>
                                         <th class="text-center">การจัดการ</th>
                                     </tr>
@@ -85,7 +84,6 @@ $querySupplier = mysqli_query($conn, $sqlSupplier);
                                                     echo $rowSupplier['address'];
                                                 } ?>
                                             </td>
-                                            <td>[นับยังไง]</td>
                                             <td><?php echo $rowSupplier['created_at'] ?></td>
                                             <td>
                                                 <div class="manage">
